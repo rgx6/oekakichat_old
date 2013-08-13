@@ -1,0 +1,68 @@
+extends layout
+block content
+  script(src='/javascripts/gameroom.js')
+  script
+    var credentials = { token: '#{token}' };
+
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.brand= title
+        ul.nav
+          li: a#roomName 
+          li: a(href='/catchhogehoge/') 退室
+
+  #main-contents.container
+    .row
+      div#theme
+      div#time
+    .row
+      div(style='float:left;')
+        canvas#mainCanvas(width='640', height='480', style='border: solid 3px #000;')
+          p お使いのブラウザはHTML5のCanvas要素に対応していません。
+      div(style='float:left;')
+        table
+          tr
+            td.pallet(style='background-color:#000')
+            td.pallet(style='background-color:#fff')
+          tr
+            td.pallet(style='background-color:#f00')
+            td.pallet(style='background-color:#f0f')
+          tr
+            td.pallet(style='background-color:#0f0')
+            td.pallet(style='background-color:#ff0')
+          tr
+            td.pallet(style='background-color:#00f')
+            td.pallet(style='background-color:#0ff')
+        div
+          button#width1px.btn 1px
+          button#width5px.btn 5px
+          br
+          button#width10px.btn 10px
+          button#width15px.btn 15px
+        div
+          button#save.btn 保存
+          br
+          button#ready.btn 準備完了
+      div(style='float:left;')
+        table#players
+
+    .row
+      .span6
+      .span6
+        form
+          input#message.span6(type='text', maxlength=100, required, placeholder='メッセージを入力...')
+    .row
+      .span6
+        #sysmessages.well
+      .span6
+        #messages.well
+
+    .row
+      .span9
+        h4 ご意見、ご要望、バグ報告等はこちらへ
+        form
+          input#bug.span9(type='text', maxlength=500, placeholder='メッセージを入力...')
+
+    .modal-footer
+      a(href='/catchhogehoge/') 退室

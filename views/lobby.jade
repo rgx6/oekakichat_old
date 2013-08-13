@@ -1,0 +1,65 @@
+extends layout
+block content
+  script(src='/javascripts/lobby.js')
+  .container
+    .hero-unit
+      h1= title
+
+    .row
+      .span6
+        h2 部屋に入る
+        form#enter.form-horizontal
+          .control-group
+            label.control-label(for='enter-room-name') 部屋名
+            .controls
+              input#enter-room-name(type='text', name='enterRoomName', readonly, required, placeholder='一覧から部屋を選択...')
+          .control-group
+            label.control-label(for='enter-player-name') プレイヤー名
+            .controls
+              input#enter-player-name(type='text', name='enterPlayerName', maxlength='20', required, placeholder='プレイヤー名を入力...')
+          .control-group
+            label.control-label(for='enter-password') パスワード
+            .controls
+              input#enter-password(type='password', name='enterPassword', readonly, maxlength='20', placeholder='パスワードを入力...')
+              br
+              br
+              button#enter-room.btn(type='button') 部屋に入る
+
+      .span6
+        h2 部屋を作る
+        form#new.form-horizontal
+          .control-group
+            label.control-label(for='new-room-name') 部屋名
+            .controls
+              input#new-room-name(type='text', name='newRoomName', maxlength='20', required, placeholder='部屋名を入力...')
+          .control-group
+            label.control-label(for='new-room-comment') 部屋のコメント
+            .controls
+              input#new-room-comment(type='text', name='newRoomComment', maxlength='40', placeholder='部屋のコメントを入力...')
+          .control-group
+            label.control-label(for='new-player-name') プレイヤー名
+            .controls
+              input#new-player-name(type='text', name='newPlayerName', maxlength='20', required, placeholder='プレイヤー名を入力...')
+          .control-group
+            label.control-label(for='new-password') パスワード
+            .controls
+              input#new-password(type='password', name='newPassword', maxlength='20', placeholder='パスワードを入力...')
+          .control-group
+            label.control-label(for='new-dictionary') 辞書
+            .controls
+              #dictionaryTarget(style='height: 50px; width: 200px; background-color: silver;')
+                  ここにドロップ
+              br
+              br
+              button#create-room.btn(type='button') 部屋を作る
+
+      .span12
+        h2 部屋一覧
+        #roomList
+
+    .row
+      .span9
+        h4 ご意見、ご要望、バグ報告等はこちらへ
+        form
+          input#bug.span9(type='text', maxlength=500, placeholder='メッセージを入力...')
+        

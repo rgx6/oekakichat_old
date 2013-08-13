@@ -1,0 +1,56 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.pallet {
+  width:  40px;
+  height: 40px;
+}
+
+#messages {
+  margin-top: 20px;
+  background: white;
+  border: 1px solid #bbb;
+}
+
+#sysmessages {
+  margin-top: 20px;
+  background: white;
+  border: 1px solid #bbb;
+}
+
+.message {
+  margin-top: 8px;
+  border-bottom: 1px solid #ddd;
+  line-height: 120%;
+}
+
+.message .postdate {
+  color: #aaa;
+}
+
+.message .author {
+  font-weight: bold;
+}
+
+.message .comment {
+  word-wrap: break-word;
+}
+
+#members-box {
+  border-top: 1px solid #ddd;
+}
+
+#members-box ul {
+  margin: 0 0 0 10px;;
+}
+#members-box li {
+  font-size: 100%;
+  list-style: none;
+}
