@@ -1,15 +1,16 @@
 {
-  "name": "application-name",
+  "name": "oekakichat",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "socket.io": "0.9.14",
-    "express"  : "3.2.5",
-    "jade"     : "0.34.1",
-    "log4js"   : "0.6.6",
-    "node-uuid": "1.4.0"
+    "socket.io":  "0.9.14",
+    "express":    "3.2.5",
+    "jade":       "0.34.1",
+    "log4js":     "0.6.6",
+    "node-uuid":  "1.4.0",
+    "sqlite3":    "2.1.15"
   }
 }

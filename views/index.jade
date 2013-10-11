@@ -1,0 +1,59 @@
+extends layout
+
+block head
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/index.js')
+
+block body
+    .container
+    .hero-unit
+        h1= title
+        説明1
+
+    .row
+        .span12
+            説明2
+
+    .row
+        .span12
+            h2 部屋を作る
+            form#create.form-horizontal
+                .control-group
+                    label.control-label(for='room-name') 部屋の名前
+                    .controls
+                        input#room-name(type='text', name='name', maxlength='#{nameMax}', required, placeholder='#{nameMax}文字まで')
+                .control-group
+                    // TODO : 実際に枠をいじってサイズ見ながら決めたい
+                    label.control-label(for='room-width') キャンバスの幅
+                    .controls
+                        input#room-width(type='text', name='width', required, placeholder='#{widthMin}～#{widthMax}')
+                .control-group
+                    label.control-label(for='room-height') キャンバスの高さ
+                    .controls
+                        input#room-height(type='text', name='height', required, placeholder='#{heightMin}～#{heightMax}')
+                        br
+                        br
+                        button#create-room.btn(type='button') 作る
+
+    .row
+        .span12
+            h2 IDとかURLとかいろいろ
+            p#result
+            p#id
+            p#url
+            p#configid
+            p#configurl
+            p#tag
+            p#loglisturl
+
+    .row
+        .spqn12
+            h2 絵茶の使い方#helpリンク先
+            h3 部屋の作り方
+            h3 名前とかサイズとか変えたい
+            h3 描いた絵の残し方
+            h3 ログを見たい
